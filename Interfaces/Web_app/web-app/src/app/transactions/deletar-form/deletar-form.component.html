@@ -1,0 +1,17 @@
+<app-form-invited *ngIf="formValid"></app-form-invited>
+<app-form-notinvited *ngIf="formInvalid"></app-form-notinvited>
+<div class="deletar">
+    <h2>Deletar Item</h2>
+    
+    <form [formGroup]="deleteForm" (ngSubmit)="onDelete()">
+      <div class="form-group">
+        <label for="id">ID do Item:</label>
+        <input id="id" formControlName="id" type="text" placeholder="Digite o ID do item" />
+        <div *ngIf="deleteForm.get('id')?.touched && deleteForm.get('id')?.invalid" class="error">
+          <small *ngIf="deleteForm.get('id')?.hasError('required')">ID é obrigatório!</small>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="deleteForm.invalid">Deletar</button>
+    </form>
+</div>

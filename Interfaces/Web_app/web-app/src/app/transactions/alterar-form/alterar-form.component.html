@@ -1,0 +1,43 @@
+<app-form-invited *ngIf="formValid"></app-form-invited>
+<app-form-notinvited *ngIf="formInvalid"></app-form-notinvited>
+<div class="alterar">
+    <h2>Alterar Item</h2>
+    
+    <form [formGroup]="alterForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="id">ID:</label>
+        <input id="id" formControlName="id" type="text" placeholder="Digite o ID do item" />
+        <div *ngIf="alterForm.get('id')?.touched && alterForm.get('id')?.invalid" class="error">
+          <small *ngIf="alterForm.get('id')?.hasError('required')">ID é obrigatório!</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="name">Nome do Item:</label>
+        <input id="name" formControlName="name" type="text" placeholder="Digite o nome do item" />
+        <div *ngIf="alterForm.get('name')?.touched && alterForm.get('name')?.invalid" class="error">
+          <small *ngIf="alterForm.get('name')?.hasError('required')">Nome é obrigatório!</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="category">Categoria:</label>
+        <input id="category" formControlName="category" type="text" placeholder="Digite a categoria" />
+        <div *ngIf="alterForm.get('category')?.touched && alterForm.get('category')?.invalid" class="error">
+          <small *ngIf="alterForm.get('category')?.hasError('required')">Categoria é obrigatória!</small>
+        </div>
+      </div>
+  
+      <div class="form-group">
+        <label for="quantity">Quantidade:</label>
+        <input id="quantity" formControlName="quantity" type="number" placeholder="Digite a quantidade" />
+        <div *ngIf="alterForm.get('quantity')?.touched && alterForm.get('quantity')?.invalid" class="error">
+          <small *ngIf="alterForm.get('quantity')?.hasError('required')">Quantidade é obrigatória!</small>
+          <small *ngIf="alterForm.get('quantity')?.hasError('min')">Quantidade mínima permitida é 1!</small>
+        </div>
+      </div>
+  
+      <button type="submit" [disabled]="alterForm.invalid">Atualizar</button>
+    </form>
+  </div>
+  

@@ -1,0 +1,27 @@
+<app-form-invited *ngIf="formValid"></app-form-invited>
+<app-form-notinvited *ngIf="formInvalid"></app-form-notinvited>
+
+<div class="inserir">
+  <h2>Inserir Item</h2>
+
+  <form [formGroup]="insertForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="id">ID do Item:</label>
+      <input id="id" formControlName="id" type="text" placeholder="Digite o ID do item" />
+      <div *ngIf="insertForm.get('id')?.touched && insertForm.get('id')?.invalid" class="error">
+        <small *ngIf="insertForm.get('id')?.hasError('required')">ID é obrigatório!</small>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="quantity">Quantidade do Item:</label>
+      <input id="quantity" formControlName="quantity" type="number" placeholder="Digite a quantidade do item" />
+      <div *ngIf="insertForm.get('quantity')?.touched && insertForm.get('quantity')?.invalid" class="error">
+        <small *ngIf="insertForm.get('quantity')?.hasError('required')">Quantidade é obrigatória!</small>
+        <small *ngIf="insertForm.get('quantity')?.hasError('min')">Quantidade deve ser maior que zero!</small>
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="insertForm.invalid">Inserir</button>
+  </form>
+</div>

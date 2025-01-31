@@ -1,0 +1,36 @@
+*{
+    display: flex;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+nav{
+    background-color: grey;
+    border: 2px solid black;
+    flex-direction: row;
+    margin-bottom: 50px;
+    .logo{
+        padding: 15px;
+        flex-direction: row;
+        img{
+            width:50px; 
+            height:50px;
+            
+        }
+        h1{
+            color: pink;
+            font-size: 25px;
+            margin-top: 15px;
+        }  
+    }
+    .redirections{
+        padding: 15px;
+        margin-top: 20px;
+        ul{
+            color: white;
+            flex-direction: row;
+            li{
+                padding-right: 20px;
+                font-size: 20px;
+            }
+        }
+    }
+}
