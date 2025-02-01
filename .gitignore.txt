@@ -1,0 +1,78 @@
+# ===============================
+# 🌐 Angular
+# ===============================
+# Dependências
+/node_modules/
+
+# Builds de produção e temporários
+/dist/
+/out-tsc/
+.tmp/
+
+# Configurações do IDE
+/.vscode/
+.idea/
+
+# Arquivos de log e temporários
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Ambiente (variáveis sensíveis)
+.env
+.env.* 
+
+# Cache do Angular
+.angular/
+
+# ===============================
+# ☕ Spring Boot (Java)
+# ===============================
+# Compilação e builds
+/target/
+/bin/
+/build/
+
+# Dependências do Maven/Gradle (opcional se for local)
+/.mvn/
+/.gradle/
+!**/src/main/**/mvnw
+!**/src/main/**/mvnw.cmd
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.swp
+
+# Configurações de IDEs (IntelliJ, Eclipse, VS Code)
+/.idea/
+/*.iml
+*.classpath
+*.project
+*.settings/
+
+# Arquivos de sistema (Windows e macOS)
+.DS_Store
+Thumbs.db
+
+# ===============================
+# 🚀 Docker (se estiver usando)
+# ===============================
+.docker/
+docker-compose.override.yml
+
+# ===============================
+# ✅ Testes
+# ===============================
+/coverage/
+*.lcov
+
+# ===============================
+# 🔐 Segurança (Chaves e credenciais)
+# ===============================
+*.pem
+*.key
+*.crt
+*.p12
